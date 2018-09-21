@@ -26,3 +26,31 @@ page {
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-right,
+.icon-right-white {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.icon-checkbox {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border: 1rpx solid #235f9a;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.icon-checkbox--active {
+  background: linear-gradient(#10fc92, #8ee5ee);
+  border-color: transparent;
+  box-shadow: 0 0 17rpx rgba(210, 210, 210, .67);
+}

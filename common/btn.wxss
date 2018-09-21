@@ -1,9 +1,9 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 0 140rpx;
-  height: 90rpx;
-  line-height: 90rpx;
+  width: 320rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   overflow: hidden;
   font-size: 32rpx;
   text-align: center;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-.btn:active:after {
+/* .btn:active:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
   height: 100%;
   background: rgba(0, 0, 0, .1);
   content: "";
-}
+} */
 
 .btn-primary {
   background-color: #93f548;
@@ -32,7 +32,7 @@
 }
 
 .btn-warning {
-  background-color: #fdd943;
+  background-color: #fbf551;
 }
 
 .btn-sm {
@@ -63,4 +63,8 @@
 
 .btn-no-radius {
   border-radius: 0;
+}
+
+.btn-round {
+  border-radius: 30rpx;
 }

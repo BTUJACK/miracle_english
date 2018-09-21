@@ -367,6 +367,11 @@
   padding-right: 50rpx !important;
 }
 
+.plr-60 {
+  padding-left: 60rpx !important;
+  padding-right: 60rpx !important;
+}
+
 .plr-80 {
   padding-left: 80rpx !important;
   padding-right: 80rpx !important;
@@ -639,6 +644,10 @@
   margin-left: 50rpx !important;
 }
 
+.ml-70 {
+  margin-left: 70rpx !important;
+}
+
 .ml-80 {
   margin-left: 80rpx !important;
 }
@@ -762,11 +771,11 @@
 
 /** 文本颜色 **/
 .color-primary {
-  color: #93f548 !important;
+  color: #0672cb !important;
 }
 
 .color-warning {
-  color: #ff9500 !important;
+  color: #f99719 !important;
 }
 
 .color-danger {
@@ -932,11 +941,11 @@
 
 /** 背景颜色 **/
 .bg-primary {
-  background-color: #93f548 !important;
+  background-color: #0672cb !important;
 }
 
 .bg-warning {
-  background-color: #ff9500 !important;
+  background-color: #f99719 !important;
 }
 
 .bg-danger {

@@ -7,8 +7,55 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    levelCurrent: 0,
+    levelList: [
+      {
+        level: '奇迹1级',
+        total: '0-800词汇量'
+      },
+      {
+        level: '奇迹2级',
+        total: '500-1500词汇量'
+      },
+      {
+        level: '奇迹3级',
+        total: '1500-3000词汇量'
+      }
+    ],
+    banbenCurrent: 0,
+    banbenList: [
+      {
+        name: '人教版'
+      },
+      {
+        name: '北师大版'
+      },
+      {
+        name: '外研社版'
+      },
+      {
+        name: '其他'
+      }
+    ]
   },
+
+  // 级别切换
+  tapLevel: function (e) {
+    let index = e.currentTarget.dataset.index;
+    this.setData({
+      levelCurrent: index
+    })
+  },
+
+  // 教材版本切换
+  tapBanben: function (e) {
+    let index = e.currentTarget.dataset.index;
+    this.setData({
+      banbenCurrent: index
+    })
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
