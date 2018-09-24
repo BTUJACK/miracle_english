@@ -191,6 +191,10 @@
   padding-top: 50rpx !important;
 }
 
+.pt-60 {
+  padding-top: 60rpx !important;
+}
+
 .pt-80 {
   padding-top: 80rpx !important;
 }
@@ -313,6 +317,10 @@
 
 .pl-30 {
   padding-left: 30rpx !important;
+}
+
+.pl-40 {
+  padding-left: 40rpx !important;
 }
 
 .pl-50 {
@@ -510,6 +518,10 @@
 
 .mt-50 {
   margin-top: 50rpx !important;
+}
+
+.mt-60 {
+  margin-top: 60rpx !important;
 }
 
 .mt-80 {
@@ -928,6 +940,10 @@
   vertical-align: middle;
 }
 
+.vat {
+  vertical-align: top;
+}
+
 /** 遮罩层 **/
 .overlay {
   position: fixed;
@@ -1101,4 +1117,9 @@
 /* 行高 */
 .lh-sm {
   line-height: 1.2;
+}
+
+/* 圆角 */
+.br-10 {
+  border-radius: 10rpx;
 }

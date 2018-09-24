@@ -54,3 +54,44 @@ page {
   border-color: transparent;
   box-shadow: 0 0 17rpx rgba(210, 210, 210, .67);
 }
+
+.icon-arrow-double-down {
+  width: 25rpx;
+  height: 15rpx;
+}
+
+.icon-kxj {
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.icon-sxy {
+  width: 32rpx;
+  height: 54rpx;
+}
+
+.icon-swlxy {
+  width: 50rpx;
+  height: 49rpx;
+}
+
+.icon-xxlxy {
+  width: 38rpx;
+  height: 54rpx;
+}
+
+.icon-qsysk {
+  width: 65rpx;
+  height: 38rpx;
+}
+
+.icon-hbdbz {
+  width: 51rpx;
+  height: 47rpx;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
