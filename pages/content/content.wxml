@@ -1,0 +1,100 @@
+<!--pages/content/content.wxml-->
+<view class="page">
+  <view class="hb-tle">
+    <image src="../../images/hbdbz-bg.png"></image>
+  </view>
+
+  <view class="hb-bd plr-20 pb-30">
+    <view class="bd-tle tac">动物童话：45核心词汇/时态语法“一文打尽”</view>
+    <view class="color-white mt-30 tac">读绘本啦！不读会后悔的绘本！</view>
+    <view class="bd-txt plr-60 color-white mt-20 fs-12">
+      <view>
+        我的小主人，要不要读一本绘本哦？这不但是特别有意思的一本动物童话故事，而且，你想都想不到，这本绘本里面埋伏了多么劲爆的彩蛋与惊喜呢！
+      </view>
+      <view>
+        哈哈，记的，这一学期，我们这本绘本你至少要读3遍，每读一遍，你都会有满满的收获哦！
+      </view>
+      <view>
+        而且，小主人，我强烈建议你背诵这篇小童话！！！嗯，此处，3个感叹号！
+      </view>
+    </view>
+
+    <view class="bd-audio bg-white pd-30 mt-30">
+      <view class="audio-tle fs-18 tac">A Lovely Party</view>
+      <view class="audio-txt fs-12 color-gray mt-20">
+        <view>
+          <text class="underline">There are living on a farm many animals.</text> One day the nice lady cow and teacher elephant hold a party. “Today we will teach you how to make cartoons,” they tell the little animals.
+        </view>
+        <view>
+          Each little animal gets an exercise book, a box of <text class="highlight">crayons</text>, a pair of scissors, and a fan!
+        </view>
+      </view>
+      <view class="audio-img tac">
+        <image src="../../images/audio-img.jpg"></image>
+      </view>
+    </view>
+  </view>  
+</view>
+
+<view class="overlay" wx:if="{{ showModal }}"></view>
+<view class="modal-wrap" wx:if="{{ showModal }}">
+  <view class="modal">
+    <view class="modal-txt lh-md">
+      <view>这么多年，你一直在问自己一句话：</view>
+      <view>为什么我的英语学习效率不高？</view>
+      <view>因为一下英语课，中文扑面而来，把你淹没……</view>
+    </view>
+
+    <view class="share-container mt-80">
+      <view class="user-info tac">
+        <view class="user-avatar">
+          <image src="../../images/user-avatar.jpg"></image>
+        </view>
+        <view class="fs-16 color-white fw-700">奇迹男孩</view>
+      </view>
+
+      <view class="txt-thanks tac">
+        <image src="../../images/txt-thanks.png"></image>
+      </view>
+
+      <view class="txt-zhuanfa tac fs-16 color-white">转发分享，立即<text class="fw-700">免费</text>领取</view>
+
+      <view class="get-list ptb-40 plr-30 mt-40">
+        <view class="fw-700">1/价值99元 奇迹英语每日奇迹课</view>
+        <view class="mt-10">奇迹每一天——高效学习的“英语母语环境”</view>
+        <view class="fw-700 mt-10">2/价值99元 奇迹英语“CQ竞争力课程”</view>
+        <view class="mt-10">CQ竞争力——为孩子面向未来的精英教育</view>
+      </view>
+    </view>
+
+    <view class="tac">
+      <view class="share-btn">
+        <button class="btn-share" hover-class="none">一键分享</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="overlay" wx:if="{{ showModal2 }}"></view>
+<view class="modal-wrap" wx:if="{{ showModal2 }}">
+  <view class="modal">
+    <view class="modal-tips">
+      <view class="tips-tle tac fw-700 color-white">
+        <view><text>您的5天免费课程即将结束</text></view>
+        <view>即将开始<text>99元30天</text>月课程</view>
+      </view>
+
+      <view class="tips-txt color-white mt-50 pt-40 tac lh-md">
+        <view>抢购超值奇迹英语播报课程</view>
+        <view><text class="fw-700">给你一个每天陪伴的高效“英语母语环境”</text></view>
+        <view><text class="fw-700">让你的英语突飞猛进！</text></view>
+        <view>6的起飞！</view>
+      </view>
+    </view>
+
+    <view class="tips-btn mt-60 fw-700 tac">
+      <view>点击进入学习</view>
+      <view>并玩一把<text>“减免学费游戏”</text></view>
+    </view>
+  </view>
+</view>

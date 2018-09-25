@@ -95,3 +95,25 @@ page {
   height: 0;
   color: transparent;
 }
+
+.user-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.user-avatar {
+  display: inline-block;
+  width: 90rpx;
+  height: 90rpx;
+  overflow: hidden;
+  border: 4rpx solid #fff;
+  border-radius: 50%;
+}
+
+.user-avatar image {
+  width: 90rpx;
+  height: 90rpx;
+}

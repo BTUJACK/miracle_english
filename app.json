@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/catalog/catalog",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/haibao/haibao",
+    "pages/haibao2/haibao2",
+    "pages/haibao3/haibao3",
+    "pages/content/content"
   ],
   "window": {
     "backgroundTextStyle": "light",

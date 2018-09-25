@@ -524,6 +524,10 @@
   margin-top: 60rpx !important;
 }
 
+.mt-70 {
+  margin-top: 70rpx !important;
+}
+
 .mt-80 {
   margin-top: 80rpx !important;
 }
@@ -1117,6 +1121,10 @@
 /* 行高 */
 .lh-sm {
   line-height: 1.2;
+}
+
+.lh-md {
+  line-height: 1.8;
 }
 
 /* 圆角 */
