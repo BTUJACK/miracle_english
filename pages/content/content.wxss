@@ -8,22 +8,22 @@
   height: 222rpx;
 }
 
-.hb-bd .bd-tle {
+.bd-tle {
   margin-top: -60rpx;
   color: #fbf50a;
 }
 
-.hb-bd .bd-txt view {
+.bd-txt view {
   text-indent: 2em;
 }
 
-.hb-bd .bd-audio {
+.bd-audio {
   position: relative;
   border-radius: 15rpx;
   border: 4rpx solid #63b7ff;
 }
 
-.hb-bd .bd-audio:after {
+.bd-audio:after {
   position: absolute;
   top: -15rpx;
   left: 50%;
@@ -36,31 +36,46 @@
   transform: translate(-50%, 0);
 }
 
-.hb-bd .bd-audio .audio-tle {
+.bd-audio .audio-tle {
   color: #28548e;
 }
 
-.hb-bd .audio-txt {
+.bd-audio .audio-txt {
   font-family: "Arial";
   letter-spacing: 1px;
 }
 
-.hb-bd .audio-txt view {
+.bd-audio .audio-txt view {
   text-indent: 2em;
 }
 
-.hb-bd .audio-txt .underline {
+.bd-audio .audio-txt .underline {
   border-bottom: 2rpx solid #68b9ff;
 }
 
-.hb-bd .audio-txt .highlight {
+.bd-audio .audio-txt .highlight {
   color: #e46b00;
   font-weight: 700;
 }
 
-.hb-bd .audio-img image {
+.bd-audio .audio-img image {
   width: 619rpx;
   height: 350rpx;
+}
+
+.bd-audio .audio-control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bd-audio .audio-control {
+  opacity: .8;
+}
+
+.bd-audio .drag {
+  border-radius: 20rpx;
 }
 
 .modal {

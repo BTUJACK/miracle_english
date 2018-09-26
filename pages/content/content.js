@@ -1,4 +1,6 @@
 // pages/content/content.js
+const innerAudioContext = wx.createInnerAudioContext();
+
 Page({
 
   /**
@@ -6,16 +8,78 @@ Page({
    */
   data: {
     showModal: false,
-    showModal2: false
+    showModal2: false,
+    duration: 0,
+    curTimeVal: 0,
+    isPlay: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var audioSrc = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
+    innerAudioContext.src = audioSrc;
   },
 
+  play: function (e) {
+    var that = this;
+    that.setData({
+      isPlay: true
+    });
+    innerAudioContext.play();
+    // innerAudioContext.onPlay(() => {
+    //   that.updateTime(that);
+    // })
+  },
+
+  pause: function (e) {
+    var that = this;
+    that.setData({
+      isPlay: false
+    });
+    innerAudioContext.pause();
+  },
+
+  updateTime: function (that) {
+    innerAudioContext.onTimeUpdate((res) => {
+      //更新时把当前的值给slide组件里的value值。slide的滑块就能实现同步更新
+      console.log("duratio的值：", innerAudioContext.duration);
+      that.setData({
+        duration: innerAudioContext.duration.toFixed(2) * 100,
+        curTimeVal: innerAudioContext.currentTime.toFixed(2) * 100,
+      })
+    })
+
+    //播放到最后一秒
+    if (innerAudioContext.duration.toFixed(2) - innerAudioContext.currentTime.toFixed(2) <= 0) {
+      that.setStopState(that)
+    }
+    innerAudioContext.onEnded(() => {
+      that.setStopState(that)
+    })
+  },
+
+  //拖动滑块
+  slideBar: function(e){
+    console.log('333')
+    let that = this;
+    var curval = e.detail.value; 
+    //滑块拖动的当前值
+    innerAudioContext.seek(curval); 
+    //让滑块跳转至指定位置
+    innerAudioContext.onSeeked((res) => {
+      this.updateTime(that) //注意这里要继续出发updataTime事件，
+    })
+  },
+
+  setStopState: function(that){
+    that.setData({
+      curTimeVal: 0
+    })
+    innerAudioContext.stop()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

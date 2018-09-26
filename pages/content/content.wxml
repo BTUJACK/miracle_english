@@ -32,6 +32,25 @@
       <view class="audio-img tac">
         <image src="../../images/audio-img.jpg"></image>
       </view>
+      <view class="audio-txt fs-12 color-gray mt-20">
+        <view>
+          “Please use your crayons to draw two pictures, one picture on one piece of paper, then cut out the pictures, paste them on each side of the fan .”
+        </view>
+      </view>
+      <view class="audio-progress flex-v-c mt-30">
+        <view class="color-primary">0:00</view>
+        <view class="flex1">
+          <slider class="drag" step="10" value="{{curTimeVal}}" max="{{duration}}"
+backgroundColor="#c2e3ff" activeColor="#42a8ff" block-size="20" bindchange="slideBar"/>
+        </view>
+        <view class="color-primary">4:00</view>
+      </view>
+      <view class="audio-control">
+        <!-- 播放状态 -->
+        <image class="icon-play" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
+        <!-- 暂停状态 -->
+        <image class="icon-stop" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
+      </view>
     </view>
   </view>  
 </view>

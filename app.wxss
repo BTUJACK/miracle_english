@@ -90,6 +90,12 @@ page {
   height: 47rpx;
 }
 
+.icon-play,
+.icon-stop {
+  width: 238rpx;
+  height: 238rpx;
+}
+
 ::-webkit-scrollbar{
   width: 0;
   height: 0;
