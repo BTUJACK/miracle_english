@@ -29,9 +29,9 @@ Page({
       isPlay: true
     });
     innerAudioContext.play();
-    // innerAudioContext.onPlay(() => {
-    //   that.updateTime(that);
-    // })
+    innerAudioContext.onPlay(() => {
+      that.updateTime(that);
+    })
   },
 
   pause: function (e) {
@@ -50,6 +50,7 @@ Page({
         duration: innerAudioContext.duration.toFixed(2) * 100,
         curTimeVal: innerAudioContext.currentTime.toFixed(2) * 100,
       })
+      console.log(this.data.curTimeVal);
     })
 
     //播放到最后一秒
@@ -62,15 +63,15 @@ Page({
   },
 
   //拖动滑块
-  slideBar: function(e){
-    console.log('333')
-    let that = this;
-    var curval = e.detail.value; 
+  slideBar: function(event){
+    var that = this;
+    var curval = event.detail.value; 
+    console.log('滑块：'+curval);
     //滑块拖动的当前值
     innerAudioContext.seek(curval); 
     //让滑块跳转至指定位置
     innerAudioContext.onSeeked((res) => {
-      this.updateTime(that) //注意这里要继续出发updataTime事件，
+      that.updateTime(that) //注意这里要继续出发updataTime事件，
     })
   },
 

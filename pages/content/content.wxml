@@ -1,58 +1,85 @@
 <!--pages/content/content.wxml-->
 <view class="page">
-  <view class="hb-tle">
-    <image src="../../images/hbdbz-bg.png"></image>
+  <view class="hb">
+    <view class="hb-tle">
+      <image src="../../images/hbdbz-bg.png"></image>
+    </view>
+
+    <view class="hb-bd plr-20 pb-30">
+      <view class="bd-tle tac">动物童话：45核心词汇/时态语法“一文打尽”</view>
+      <view class="color-white mt-30 tac">读绘本啦！不读会后悔的绘本！</view>
+      <view class="bd-txt plr-60 color-white mt-20 fs-12">
+        <view>
+          我的小主人，要不要读一本绘本哦？这不但是特别有意思的一本动物童话故事，而且，你想都想不到，这本绘本里面埋伏了多么劲爆的彩蛋与惊喜呢！
+        </view>
+        <view>
+          哈哈，记的，这一学期，我们这本绘本你至少要读3遍，每读一遍，你都会有满满的收获哦！
+        </view>
+        <view>
+          而且，小主人，我强烈建议你背诵这篇小童话！！！嗯，此处，3个感叹号！
+        </view>
+      </view>
+
+      <view class="bd-audio bg-white pd-30 mt-30">
+        <view class="audio-tle fs-18 tac">A Lovely Party</view>
+        <view class="audio-txt fs-12 color-gray mt-20">
+          <view>
+            <text class="underline">There are living on a farm many animals.</text> One day the nice lady cow and teacher elephant hold a party. “Today we will teach you how to make cartoons,” they tell the little animals.
+          </view>
+          <view>
+            Each little animal gets an exercise book, a box of <text class="highlight">crayons</text>, a pair of scissors, and a fan!
+          </view>
+        </view>
+        <view class="audio-img tac">
+          <image src="../../images/audio-img.jpg"></image>
+        </view>
+        <view class="audio-txt fs-12 color-gray mt-20">
+          <view>
+            “Please use your crayons to draw two pictures, one picture on one piece of paper, then cut out the pictures, paste them on each side of the fan .”
+          </view>
+        </view>
+        <view class="audio-progress flex-v-c mt-30">
+          <view class="color-primary">0:00</view>
+          <view class="flex1">
+            <slider class="drag" step="10" value="{{curTimeVal}}" max="{{duration}}"
+  backgroundColor="#c2e3ff" activeColor="#42a8ff" block-size="20" bindchange="slideBar"/>
+          </view>
+          <view class="color-primary">4:00</view>
+          <view class="audio-original">
+            <image class="icon icon-headset mr-10" src="../../images/icon-headset.png"></image>
+            <text class="fs-12 color-white vam">英文原声</text>
+          </view>
+        </view>
+        <view class="audio-control">
+          <!-- 播放状态 -->
+          <image class="icon-play" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
+          <!-- 暂停状态 -->
+          <image class="icon-stop" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
+        </view>
+        <view class="audio-controls flex-v-c flex-h-c tac">
+          <view>
+            <image class="icon-back mr-50" src="../../images/icon-go.png"></image>
+          </view>
+          <view>
+            <image class="icon-stop icon-stop--sm" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
+            <image class="icon-play icon-play--sm" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
+          </view>
+          <view>
+            <image class="icon-go ml-50" src="../../images/icon-go.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
-
-  <view class="hb-bd plr-20 pb-30">
-    <view class="bd-tle tac">动物童话：45核心词汇/时态语法“一文打尽”</view>
-    <view class="color-white mt-30 tac">读绘本啦！不读会后悔的绘本！</view>
-    <view class="bd-txt plr-60 color-white mt-20 fs-12">
-      <view>
-        我的小主人，要不要读一本绘本哦？这不但是特别有意思的一本动物童话故事，而且，你想都想不到，这本绘本里面埋伏了多么劲爆的彩蛋与惊喜呢！
-      </view>
-      <view>
-        哈哈，记的，这一学期，我们这本绘本你至少要读3遍，每读一遍，你都会有满满的收获哦！
-      </view>
-      <view>
-        而且，小主人，我强烈建议你背诵这篇小童话！！！嗯，此处，3个感叹号！
-      </view>
+  
+  <!-- 模拟造句 -->
+  <view class="hb-mod ptb-20 plr-20">
+    <view class="mod-tle tac">
+      <image class="icon icon-leaf" src="../../images/icon-leaf.png"></image>
+      <text class="mlr-10 fs-18">模拟造句</text>
+      <image class="icon icon-leaf icon-leaf--flip" src="../../images/icon-leaf.png"></image>
     </view>
-
-    <view class="bd-audio bg-white pd-30 mt-30">
-      <view class="audio-tle fs-18 tac">A Lovely Party</view>
-      <view class="audio-txt fs-12 color-gray mt-20">
-        <view>
-          <text class="underline">There are living on a farm many animals.</text> One day the nice lady cow and teacher elephant hold a party. “Today we will teach you how to make cartoons,” they tell the little animals.
-        </view>
-        <view>
-          Each little animal gets an exercise book, a box of <text class="highlight">crayons</text>, a pair of scissors, and a fan!
-        </view>
-      </view>
-      <view class="audio-img tac">
-        <image src="../../images/audio-img.jpg"></image>
-      </view>
-      <view class="audio-txt fs-12 color-gray mt-20">
-        <view>
-          “Please use your crayons to draw two pictures, one picture on one piece of paper, then cut out the pictures, paste them on each side of the fan .”
-        </view>
-      </view>
-      <view class="audio-progress flex-v-c mt-30">
-        <view class="color-primary">0:00</view>
-        <view class="flex1">
-          <slider class="drag" step="10" value="{{curTimeVal}}" max="{{duration}}"
-backgroundColor="#c2e3ff" activeColor="#42a8ff" block-size="20" bindchange="slideBar"/>
-        </view>
-        <view class="color-primary">4:00</view>
-      </view>
-      <view class="audio-control">
-        <!-- 播放状态 -->
-        <image class="icon-play" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
-        <!-- 暂停状态 -->
-        <image class="icon-stop" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
-      </view>
-    </view>
-  </view>  
+  </view>
 </view>
 
 <view class="overlay" wx:if="{{ showModal }}"></view>

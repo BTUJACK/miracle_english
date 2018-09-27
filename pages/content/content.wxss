@@ -1,5 +1,5 @@
 /* pages/content/content.wxss */
-.page {
+.hb {
   background: linear-gradient(#0050a4, #017a9e);  
 }
 
@@ -67,7 +67,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
 }
 
 .bd-audio .audio-control {
@@ -78,6 +78,30 @@
   border-radius: 20rpx;
 }
 
+.bd-audio .audio-progress {
+  position: relative;
+}
+
+.bd-audio .audio-original {
+  position: absolute;
+  top: -30rpx;
+  right: 0;
+  height: 42rpx;
+  line-height: 36rpx;
+  padding: 0 10rpx;
+  background: #42a8ff;
+  border-radius: 20rpx;
+}
+
+.hb-mod {
+  background: linear-gradient(#017a9e, #029d98);
+}
+
+.hb-mod .mod-tle {
+  color: #fbf50a;
+}
+
+/* 弹窗 */
 .modal {
   width: auto;
   background: none;

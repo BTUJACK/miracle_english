@@ -96,6 +96,37 @@ page {
   height: 238rpx;
 }
 
+.icon-play--sm,
+.icon-stop--sm {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.icon-headset {
+  width: 31rpx;
+  height: 30rpx;
+}
+
+.icon-go,
+.icon-back {
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.icon-back {
+  transform: scale(-1, 1);
+}
+
+.icon-leaf,
+.icon-leaf--flip {
+  width: 21rpx;
+  height: 38rpx;
+}
+
+.icon-leaf--flip {
+  transform: scale(-1, 1);
+}
+
 ::-webkit-scrollbar{
   width: 0;
   height: 0;
