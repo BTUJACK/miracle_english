@@ -195,6 +195,10 @@
   padding-top: 60rpx !important;
 }
 
+.pt-70 {
+  padding-top: 70rpx !important;
+}
+
 .pt-80 {
   padding-top: 80rpx !important;
 }
@@ -281,6 +285,10 @@
 
 .pb-50 {
   padding-bottom: 50rpx !important;
+}
+
+.pb-70 {
+  padding-bottom: 70rpx !important;
 }
 
 .pb-80 {

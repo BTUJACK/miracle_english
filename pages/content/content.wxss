@@ -94,11 +94,91 @@
 }
 
 .hb-mod {
+  position: relative;
   background: linear-gradient(#017a9e, #029d98);
+}
+
+.hb-mod--gdxx {
+  background: linear-gradient(#029d98, #03ca92);
+}
+
+.hb-mod--xztfx {
+  background: linear-gradient(#1283ca, #31cace);
+}
+
+.hb-mod:after {
+  position: absolute;
+  top: 260rpx;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  background: #7ebf52;
+  content: "";
+  transform: skewY(-5deg);
+}
+
+.hb-mod--no-bg:after {
+  content: none;
 }
 
 .hb-mod .mod-tle {
   color: #fbf50a;
+}
+
+.hb-mod .mod-content {
+  position: relative;
+  z-index: 1;
+  border-radius: 10rpx;
+}
+
+.circle-icon {
+  display: inline-block;
+  width: 62rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  font-size: 42rpx;
+  color: #fff;
+  text-align: center;
+  background: #42a8ff;
+  border-radius: 50%;
+}
+
+.zaoju-item {
+  padding: 40rpx;
+}
+
+.zaoju-item:not(:first-child) {
+  border-top: 1rpx solid #f2f6fa;
+}
+
+.zaoju-item .item-input {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+  background: #f2f6fa;
+  border-radius: 35rpx;
+}
+
+.zaoju-item .item-right {
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 17rpx rgba(210, 210, 210, .32);
+}
+
+.sound-wave {
+  height: 84rpx;
+  line-height: 84rpx;
+  text-align: center;
+  background: #e2f2ff;
+  border-radius: 42rpx;
+}
+
+.color-primary {
+  color: #57b7f5 !important;
 }
 
 /* 弹窗 */

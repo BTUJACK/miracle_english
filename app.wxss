@@ -33,7 +33,8 @@ page {
 }
 
 .icon-right,
-.icon-right-white {
+.icon-right-white,
+.icon-right-blue {
   width: 28rpx;
   height: 28rpx;
 }
@@ -102,6 +103,11 @@ page {
   height: 64rpx;
 }
 
+.icon-stop--xs {
+  width: 50rpx;
+  height: 50rpx;
+}
+
 .icon-headset {
   width: 31rpx;
   height: 30rpx;
@@ -125,6 +131,26 @@ page {
 
 .icon-leaf--flip {
   transform: scale(-1, 1);
+}
+
+.icon-arrow-double-left,
+.icon-arrow-double-right {
+  width: 28rpx;
+  height: 26rpx;
+}
+
+.icon-arrow-double-right {
+  transform: scale(-1, 1);
+}
+
+.icon-reading {
+  width: 52rpx;
+  height: 68rpx;
+}
+
+.icon-star {
+  width: 40rpx;
+  height: 40rpx;
 }
 
 ::-webkit-scrollbar{

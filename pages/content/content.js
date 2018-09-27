@@ -11,7 +11,21 @@ Page({
     showModal2: false,
     duration: 0,
     curTimeVal: 0,
-    isPlay: false
+    isPlay: false,
+    zaojuList: [
+      {
+        id: 1,
+        en: 'Did you do like you should?',
+        ch: '试写：你好好上学了吗？',
+        cankao: 'Did you go to school like you should?'
+      },
+      {
+        id: 2,
+        en: 'How did it taste?Yum, Yum, Yum.',
+        ch: '试写：妈妈声音听起来怎么样？温柔温柔又温柔！',
+        cankao: 'How does Mum’s voice sound?Gentle, gentle, gentle!'
+      }
+    ]
   },
 
   /**
