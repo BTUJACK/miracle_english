@@ -39,34 +39,34 @@
           </view>
         </view>
         <view class="audio-progress flex-v-c mt-30">
-          <view class="color-primary">0:00</view>
+          <view class="color-primary">{{ current_process }}</view>
           <view class="flex1">
-            <slider class="drag" step="10" value="{{curTimeVal}}" max="{{duration}}"
-  backgroundColor="#c2e3ff" activeColor="#42a8ff" block-size="20" bindchange="slideBar"/>
+            <slider class="slider" 
+              bindchange="hanle_slider_change" 
+              bindtouchstart="handle_slider_move_start" 
+              bindtouchend="handle_slider_move_end" 
+              min="0" 
+              block-size="20" 
+              max="{{slider_max}}" 
+              color="#c2e3ff"
+              activeColor="#42a8ff" 
+              backgroundColor="#c2e3ff" 
+              value="{{slider_value}}"
+            />
           </view>
-          <view class="color-primary">4:00</view>
+          <view class="color-primary">{{ total_process }}</view>
           <view class="audio-original">
             <image class="icon icon-headset mr-10" src="../../images/icon-headset.png"></image>
             <text class="fs-12 color-white vam">英文原声</text>
           </view>
         </view>
         <view class="audio-control">
-          <!-- 播放状态 -->
-          <image class="icon-play" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
-          <!-- 暂停状态 -->
-          <image class="icon-stop" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
+          <image mode="widthFix" src="{{ is_play ? '../../images/icon-play.png' : '../../images/icon-stop.png' }}" class="icon-play" bindtap="audio_play"></image>
         </view>
         <view class="audio-controls flex-v-c flex-h-c tac">
-          <view>
-            <image class="icon-back mr-50" src="../../images/icon-go.png"></image>
-          </view>
-          <view>
-            <image class="icon-stop icon-stop--sm" src="../../images/icon-stop.png" bindtap="play" hidden="{{ isPlay }}"></image>
-            <image class="icon-play icon-play--sm" src="../../images/icon-play.png" bindtap="pause" hidden="{{ !isPlay }}"></image>
-          </view>
-          <view>
-            <image class="icon-go ml-50" src="../../images/icon-go.png"></image>
-          </view>
+          <image class="icon-back {{ is_first_page ? 'icon-back--disabled' : ''}} mr-50" src="../../images/icon-go.png"></image>
+          <image mode="widthFix" src="{{ is_play ? '../../images/icon-play.png' : '../../images/icon-stop.png' }}" class="icon-play icon-play--sm" bindtap="audio_play"></image>
+          <image class="icon-go ml-50 {{ is_last_page ? 'icon-back--disabled' : ''}}" src="../../images/icon-go.png"></image>
         </view>
       </view>
     </view>
@@ -138,6 +138,19 @@
           <image class="icon-arrow-double-left" src="../../images/icon-arrow-double-left.png"></image>
         </view>
         <view class="sound-wave flex1">
+          <image class="sound" src="../../images/sound.png" hidden="{{ soundPlay }}"></image>
+          <view class="wave-list" hidden="{{ !soundPlay }}">
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+            <icon class="wave-item {{ soundPlay ? 'active' : ''}}"></icon>
+          </view>
         </view>
         <view class="ml-50">
           <image class="icon-arrow-double-right" src="../../images/icon-arrow-double-left.png"></image>
@@ -145,13 +158,13 @@
       </view>
 
       <view class="mt-20 flex">
-        <view class="flex1 tac" style="padding-top: 18rpx;">
+        <view class="flex1 tac" style="padding-top: 18rpx;" bindtap="showModal3">
           <view>
             <image class="icon-stop icon-stop--xs" src="../../images/icon-stop.png"></image>
           </view>
           <view>播放</view>
         </view>
-        <view class="flex1 tac">
+        <view class="flex1 tac" bindtap="tapGendu">
           <view>
             <image class="icon-reading" src="../../images/icon-reading.png"></image>
           </view>
@@ -178,14 +191,39 @@
       <text class="mlr-10 fs-18 fw-700">选择题分享</text>
     </view>
     <view class="color-white fs-16 mt-15 tac">邀请达人好友答题，减免学费</view>
+    <view class="mod-content pd-40 bg-white mt-30">
+      <view class="fs-12 color-gray">
+        <view>Ok, 我们学习完这段电影视频了！</view>
+        <view>Isn’t it a fanstantic movie? With wild imagination!</view>
+      </view>
+      <view class="fs-18 fw-700 mtb-20" style="color: #28548e;">Let me ask you a question:</view>
+      <view class="fs-12 color-gray">
+        <view>那么，你来猜一下，在最后这句话中，Are you wondering about this?</view>
+        <view class="mt-20">在这句话中，wonder的意思是___________？</view>
+        <view class="mt-20">词性是____________？</view>
+      </view>
+      <view class="answer-list row">
+        <view class="answer-item col-xs-6 {{ answerIndex == index ? 'active' : ''}}" wx:for="{{ answerList }}" wx:key="index" data-index="{{ index }}" bindtap="tapAnswer">
+          <text class="item-id mr-20 vam fw-700">{{ item.id }}</text>
+          <text class="vam">{{ item.text }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="pd-30 color-white">
+      分享给你的好朋友，向他们发起挑战，如果有10个以上好朋友可以答对，你就可以减免月学费的一半哦！
+    </view>
+    <view class="flex mt-20">
+      <view class="btn btn-round flex1" style="color: #28548e;" bindtap="showModal">分享</view>
+      <view class="btn btn-round btn-warning flex1 ml-70">提交</view>
+    </view>
   </view>
-
 </view>
 <!-- end .page -->
 
-<view class="overlay" wx:if="{{ showModal }}"></view>
+<!-- 分享弹窗 -->
 <view class="modal-wrap" wx:if="{{ showModal }}">
-  <view class="modal">
+  <view class="overlay" wx:if="{{ showModal }}" bindtap="hideModal"></view>
+  <view class="modal" style="width: 550rpx;">
     <view class="modal-txt lh-md">
       <view>这么多年，你一直在问自己一句话：</view>
       <view>为什么我的英语学习效率不高？</view>
@@ -222,9 +260,10 @@
   </view>
 </view>
 
-<view class="overlay" wx:if="{{ showModal2 }}"></view>
+<!-- 提示框 -->
 <view class="modal-wrap" wx:if="{{ showModal2 }}">
-  <view class="modal">
+  <view class="overlay" wx:if="{{ showModal2 }}"></view>
+  <view class="modal" style="width: 634rpx;">
     <view class="modal-tips">
       <view class="tips-tle tac fw-700 color-white">
         <view><text>您的5天免费课程即将结束</text></view>
@@ -243,5 +282,13 @@
       <view>点击进入学习</view>
       <view>并玩一把<text>“减免学费游戏”</text></view>
     </view>
+  </view>
+</view>
+
+<!-- 视频弹窗 -->
+<view class="modal-wrap" wx:if="{{ showModal3 }}">
+  <view class="overlay" wx:if="{{ showModal3 }}" bindtap="hideModal3"></view>
+  <view class="modal">
+    <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls></video>
   </view>
 </view>

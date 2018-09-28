@@ -34,6 +34,13 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    global_bac_audio_manager: {
+      manage: wx.getBackgroundAudioManager(),
+      is_play: false,
+      id: '',
+      play_time: '',
+      article_id: '',
+    }
   }
 })
