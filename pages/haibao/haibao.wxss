@@ -58,6 +58,16 @@ page {
 }
 
 .haibao-code image {
-  width: 179rpx;
-  height: 143rpx;
+  width: 188rpx;
+  height: 205rpx;
+}
+
+.haibao-code-txt {
+  width: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+}
+
+.haibao-code-txt text {
+  color: #ff0000;
 }

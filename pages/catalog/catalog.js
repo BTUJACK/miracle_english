@@ -35,6 +35,36 @@ Page({
         imgUrl: '../../images/catalog-img.jpg',
         tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
         txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
+      },
+      {
+        imgUrl: '../../images/catalog-img.jpg',
+        tle: '睡前陪伴 THINK DIFFERENT天才乔布斯与苹果的故事',
+        txt: '少年商学院'
       }
     ],
     date: '2018-09-22'

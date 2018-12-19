@@ -39,13 +39,15 @@
     </view>
   </view>
 
-  <view class="ptb-15 plr-30 flex-v-c">
-    <view class="color-white pl-20 flex1">
+  <view class="ptb-15 plr-20 flex-v-c">
+    <view class="color-white flex1">
       <view>奇迹英语，要制造什么样的奇迹？</view>
       <view>识别小程序码，一探究竟！</view>
     </view>
     <view class="haibao-code">
       <image src="../../images/code.png"></image>
     </view>
+    <view class="haibao-code-txt color-white ml-20">免费抢购<text class="fw-700">99</text>元英语课</view>
+    <view class="haibao-code-txt color-white">长按识别 进入小程序</view>
   </view>
 </view>

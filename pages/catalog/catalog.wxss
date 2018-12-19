@@ -21,27 +21,27 @@
   box-shadow: 0 5rpx 13rpx rgba(244, 98, 78, .47);
 }
 
-.catalog-item:nth-of-type(2) {
+.catalog-item:nth-of-type(6n+2) {
   background: #f7af32;
   box-shadow: 0 5rpx 13rpx rgba(247, 175, 50, .47);
 }
 
-.catalog-item:nth-of-type(3) {
+.catalog-item:nth-of-type(6n+3) {
   background: #12d66e;
   box-shadow: 0 5rpx 13rpx rgba(18, 214, 110, .47);
 }
 
-.catalog-item:nth-of-type(4) {
+.catalog-item:nth-of-type(6n+4) {
   background: #02c8d4;
   box-shadow: 0 5rpx 13rpx rgba(2, 200, 212, .47);
 }
 
-.catalog-item:nth-of-type(5) {
+.catalog-item:nth-of-type(6n+5) {
   background: #1b90da;
   box-shadow: 0 5rpx 13rpx rgba(2, 200, 212, .47);
 }
 
-.catalog-item:nth-of-type(6) {
+.catalog-item:nth-of-type(6n+6) {
   background: #b374ee;
   box-shadow: 0 5rpx 13rpx rgba(179, 116, 238, .47);
 }
